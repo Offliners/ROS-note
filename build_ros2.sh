@@ -9,12 +9,15 @@ sudo sh -c 'echo "deb [arch=$(dpkg --print-architecture)] http://packages.ros.or
 # Add build dependencies
 sudo apt update && sudo apt install -y build-essential cmake git python3-colcon-common-extensions python3-lark-parser python3-pip python-rosdep python3-vcstool wget
 python3 -m pip install -U argcomplete flake8 flake8-blind-except flake8-builtins flake8-class-newline flake8-comprehensions flake8-deprecated flake8-docstrings flake8-import-order flake8-quotes pytest-repeat pytest-rerunfailures pytest pytest-cov pytest-runner setuptools
+sudo apt install --no-install-recommends -y libasio-dev libtinyxml2-dev
 
 # Install ROS-2
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws
-wget https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos
+wget https://raw.githubusercontent.com/ros2/ros2/dashing/ros2.repos
 vcs import src < ros2.repos
 sudo rosdep init
 rosdep update
-sudo rosdep install --from-paths src --ignore-src --rosdistro -y --skip-keys "console_bridge fastcdr fastrtps libopensplice67 libopensplice69 rti-connext-dds-5.3.1 urdfdom_headers"
+rosdep install --from-paths src --ignore-src --rosdistro dashing -y --skip-keys "console_bridge fastcdr fastrtps libopensplice67 libopensplice69 rti-connext-dds-5.3.1 urdfdom_headers"
+cd ~/ros2_ws/
+colcon build --symlink-install
