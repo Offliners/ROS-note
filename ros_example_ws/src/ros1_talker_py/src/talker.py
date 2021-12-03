@@ -6,7 +6,7 @@ from time import sleep
 
 def talker_main():
     rospy.init_node('ros1_talker_node')
-    pub = rospy.Publisher('/chatter', String)
+    pub = rospy.Publisher('chatter', String, queue_size=1000)
     msg = String
     i = 0
     while not rospy.is_shutdown():
