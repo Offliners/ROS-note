@@ -15,7 +15,7 @@ sh build_ros1.sh
 mkdir -p {workspace name}/src
 cd {workspace name}/src
 catkin_init_workspace
-catkin_create_pkg {project_name} rospy # rospy後面可加入其他package
+catkin_create_pkg {project_name} rospy # rospy後面可加入其他package, ex:roscpp
 ```
 
 ### 編譯Workspace
