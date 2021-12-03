@@ -23,7 +23,7 @@ catkin_create_pkg {project_name} rospy # rospy後面可加入其他package
 cd {workspace name} # 到workspace的根目錄
 catkin_make
 sorce devel/setup.bash
-rosrun {project_name} {Python_file}.py
+rosrun {project_name} {Python_file}.py # rosrun時要確認roscore是否在執行中
 ```
 
 ## Reference
