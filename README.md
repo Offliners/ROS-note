@@ -6,7 +6,7 @@ ROS-1 version : `Medolic`
 
 ## 安裝ROS-1 Melodic
 ```shell
-sh build_ros.sh
+sh build_ros1.sh
 ```
 
 ## Reference
