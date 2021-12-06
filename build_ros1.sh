@@ -19,3 +19,9 @@ source /opt/ros/melodic/setup.bash
 sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential python-roslaunch
 sudo rosdep init
 rosdep update
+
+# Tools
+sudo apt-get install ros-melodic-ros-control
+sudo apt-get install ros-melodic-ros-controllers
+sudo apt-get install ros-melodic-gazebo-ros-control
+sudo apt install ros-melodic-joint-state-publisher-gui
